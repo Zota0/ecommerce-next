@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    @apply m-0 p-0;
+}
+
+body {
+    @apply bg-slate-800 text-gray-200 overflow-x-hidden overflow-y-auto; 
+}
+
+div {
+    @apply flex flex-col flex-wrap align-middle text-center justify-between items-center;
+}
+
+h1 {
+    @apply text-5xl;
+}
+
+h2 {
+    @apply text-4xl;
+}
+
+h3 {
+    @apply text-3xl;
+}
+
+h4 {
+    @apply text-2xl;
+}
+
+h5 {
+    @apply text-xl;
+}
+
+h6 {
+    @apply text-lg;
+}
+
+.btn-bg-transition {
+    transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-border-transition {
+    transition: border-color 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
