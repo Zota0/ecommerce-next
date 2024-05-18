@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header = () => {
     return (
-		<div className="w-full bg-black flex justify-between items-center align-middle px-4 mx-4 h-12 overflow-hidden">
+		<div className="fixed w-full bg-black flex justify-between items-center align-middle px-4 mx-4 h-12 overflow-hidden">
 			<header className="h-full w-full flex justify-between items-center align-middle px-4 mx-0 flex-row">
 				<h5 className="w-2/6 font-extrabold text-lg ml-6">Page Name</h5>
 				<div className="w-1/3">
