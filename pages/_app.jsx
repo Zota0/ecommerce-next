@@ -1,13 +1,13 @@
 import "../styles/styles.css";
 import Link from "next/link";
-import Header from "../src/components/Header";
+import HeaderElement from "../src/components/Header";
 
 function MyApp({Component, pageProps}) {
     return (
-        <div>
-            <Header />
-            <div className="mt-18 w-screen h-screen">
-                <main className="w-[85%]">
+        <div className="w-screen h-screen">
+            <HeaderElement />
+            <div className="mt-20 w-full min-h-full h-auto">
+                <main className="w-[85%] h-full">
                     <Component {...pageProps} />
                 </main>
             </div>

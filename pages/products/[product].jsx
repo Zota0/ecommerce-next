@@ -60,7 +60,7 @@ export default function Product(props) {
 
 
     return (
-        <div className={`w-full bg-slate-900 min-h-full py-2 border- border-slate-800 p-4` + " " + DialogOpenedStyle}>
+        <div className={`w-full bg-slate-900 border- border-slate-800 p-4` + " " + DialogOpenedStyle}>
             <div>
                 <h2>Produkt: {ProductData.title}</h2>
                 <p>Kategoria: {ProductData.category} <span className="px-4">|</span> Nr. Artykułu: {ProductData.id}</p>
