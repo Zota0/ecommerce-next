@@ -3,13 +3,13 @@ import Image from "next/image";
 
 const HeaderElement = () => {
 
-	const PageName = process.env.NEXT_PUBLIC_PAGE_NAME;
+	const PageName = process.env.NEXT_PUBLIC_PAGE_NAME || 'Page name';
 
 	return (
 		<header className="fixed flex w-screen h-24 max-h-24 min-h-24 overflow-hidden bg-black justify-center align-middle items-center">
 			<div className="flex w-full h-full justify-center align-middle items-center px-8 py-2">
-				<div className="w-3/12 h-full">
-					<span title={PageName} className="relative top-[10%] h-full w-full text-[40px] font-extrabold uppercase select-none">{PageName}</span>
+				<div title={PageName} className="w-3/12 h-full">
+					<span className="relative top-[10%] h-full w-full text-[40px] font-extrabold uppercase select-none">{PageName}</span>
 				</div>
 				<div className="w-7/12 h-full">
 					<div className="w-full h-full">
