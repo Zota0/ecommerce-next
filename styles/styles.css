@@ -3,6 +3,10 @@
 @tailwind utilities;
 @tailwind variants;
 
+#__next {
+    @apply w-svw h-auto min-h-svh overflow-hidden;
+}
+
 * {
     box-sizing: border-box;
 }
