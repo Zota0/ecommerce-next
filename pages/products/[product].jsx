@@ -19,9 +19,8 @@ export default function Product(props) {
     const [DialogOpenedStyle, setDialogOpenedStyle] = useState('');
 
     const ImageZoom = (ImgID) => {
-        const DialogImgID = (ImgID ? ImgID : 0);
-        console.log(DialogImgID);
-        setZoomedImageID(DialogImgID);
+        console.log((ImgID ? ImgID : 0));
+        setZoomedImageID((ImgID ? ImgID : 0));
         console.log(ZoomedImageID);
         setZoomedImage(true);
         console.log(ZoomedImage);
@@ -81,7 +80,7 @@ export default function Product(props) {
                                 Style={ZoomedImageCarouselStyles}
                                     images={ProductData.images}
                                     Click={(e) => console.log(e)}
-                                    
+                                    StartIndex={parseInt(ZoomedImageID)}
                                 />
                                 </div>
                             </div>
