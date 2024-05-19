@@ -62,3 +62,18 @@ h6 {
 .btn-border-transition {
     transition: border-color 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+::-webkit-scrollbar {
+    background: #000;
+    width: 24px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 50px;
+    border: #111 4px inset; 
+}
+
+.closeBtn {
+    z-index: 100000000;
+}

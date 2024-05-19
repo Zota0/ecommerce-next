@@ -33,6 +33,7 @@ export default function Product(props) {
         setDialogOpenedStyle('');
     }
 
+
     const ImageCarouselStyles = {
         main: "relative w-96 h-96 overflow-hidden p-0 m-2",
         img_group: "relative w-full h-full",
@@ -46,10 +47,10 @@ export default function Product(props) {
     }
 
     const ZoomedImageCarouselStyles = {
-        main: "relative w-96 h-96 overflow-hidden p-0 m-2",
+        main: "relative w-full h-full overflow-hidden p-0 m-2",
         img_group: "relative w-full h-full",
         img_btn: "absolute inset-0 flex items-center justify-center",
-        img: "object-contain w-[90%] h-[90%]",
+        img: "select-none h-full w-full aspect-square",
         btn_group: "absolute top-0 left-0 w-full h-full flex justify-between items-center",
         btn: "bg-gray-800 text-white px-4 py-2 rounded-full",
         radio_wrapper: "overflow-hidden absolute top-[95%] bottom-0 left-[20%] w-[60%] items-center h-4 flex justify-between",
@@ -69,19 +70,20 @@ export default function Product(props) {
                 <div className="h-full w-5/12 bg-white overflow-hidden aspect-w-16 aspect-h-9">
                     <div className="flex justify-between align-middle text-center flex-warp flex-col aspect-video mx-auto"> 
                         <ImageCarousel images={ProductData.images} Click={(e) => ImageZoom(e.target.id)} Style={ImageCarouselStyles} /> 
-                        <dialog open={ZoomedImage} className="z-100 absolute top-[2%] bg-black aspect-square h-[calc(50%)] w-[calc(50%)]">
-                            <div className="relative -top-[5%]">
-                                <h5>{ProductData.title}</h5>
-                                <button className="bg-transparent bg-none aspect-square leading-none font-bold p-2 text-6xl text-red-600 rounded-full absolute -top-[3.5%] zi-10 left-[96%]" onClick={CloseZoom}>
+                        <dialog open={ZoomedImage} className="z-100 top-[10%] absolute bg-black aspect-square h-[calc(85%)] w-[calc(85%)]">
+                            <div className="w-full h-full flex justify-center items-center flex-row text-center">
+                                <h5>{ProductData.title}</h5>    
+                                <button className="closeBtn bg-transparent bg-none aspect-square leading-none font-bold p-8 text-6xl text-red-600 rounded-full absolute -top-[5%] left-[96%]" onClick={CloseZoom}>
                                     ❌
                                 </button>
-                                {/* <img
-                                className="object-cover object-center w-full h-full"
-                                loading="eager"
-                                src={ProductData.images[ZoomedImageID]}
-                                alt={ProductData.title}
-                            /> */}
-                                <ImageCarousel Style={ZoomedImageCarouselStyles} images={ProductData.images} Click={(e) => console.log(e)}></ImageCarousel>
+                                <div className="w-full h-full"> 
+                                <ImageCarousel
+                                Style={ZoomedImageCarouselStyles}
+                                    images={ProductData.images}
+                                    Click={(e) => console.log(e)}
+                                    
+                                />
+                                </div>
                             </div>
                         </dialog>
                     </div>
