@@ -65,7 +65,7 @@ export default function Product(props) {
                 <h2>Produkt: {ProductData.title}</h2>
                 <p>Kategoria: {ProductData.category} <span className="px-4">|</span> Nr. Artykułu: {ProductData.id}</p>
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row w-full">
                 <div className="h-full w-5/12 bg-white overflow-hidden aspect-w-16 aspect-h-9">
                     <div className="flex justify-between align-middle text-center flex-warp flex-col aspect-video mx-auto"> 
                         <ImageCarousel images={ProductData.images} Click={(e) => ImageZoom(e.target.id)} Style={ImageCarouselStyles} /> 
