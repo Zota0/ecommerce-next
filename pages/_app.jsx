@@ -1,6 +1,7 @@
 import "../styles/styles.css";
 import Link from "next/link";
 import HeaderElement from "../src/components/Header";
+import Footer from "../src/components/Footer";
 
 function MyApp({Component, pageProps}) {
     return (
@@ -12,6 +13,7 @@ function MyApp({Component, pageProps}) {
             {/* <footer className="absolute bottom-0 -top-[100svh] left-0 w-full pb-4">
                 Created by Zota0 - <Link href="https://github.com/Zota0">Github</Link>
             </footer> */}
+            <Footer/>
         </div>
     );
 }
