@@ -112,6 +112,7 @@ export default function Product(props) {
                     </button>
                 </div>
             </div>
+            <div className="h-[calc(60%)] w-full"></div>
         </div>
     );
 }
