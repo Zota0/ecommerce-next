@@ -7,7 +7,7 @@ function MyApp({Component, pageProps}) {
     return (
         <div className="w-screen min-h-screen h-auto">
             <HeaderElement />            
-            <main className="mt-24 w-[85%] h-full">
+            <main className="mt-24 w-[90%] h-full">
                 <Component {...pageProps} />
             </main>
             {/* <footer className="absolute bottom-0 -top-[100svh] left-0 w-full pb-4">
