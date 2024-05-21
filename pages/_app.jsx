@@ -7,12 +7,9 @@ function MyApp({Component, pageProps}) {
     return (
         <div className="w-screen min-h-screen h-auto">
             <HeaderElement />            
-            <main className="mt-24 w-[90%] h-full min-h-[85svh]">
+            <main className="p-16 bg-gradient-to-b from-gray-900 to-blue-950 mt-24 w-[80%] h-full min-h-[80svh]">
                 <Component {...pageProps} />
             </main>
-            {/* <footer className="absolute bottom-0 -top-[100svh] left-0 w-full pb-4">
-                Created by Zota0 - <Link href="https://github.com/Zota0">Github</Link>
-            </footer> */}
             <Footer/>
         </div>
     );
