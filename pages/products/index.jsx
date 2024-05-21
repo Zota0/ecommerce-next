@@ -3,48 +3,93 @@ import { Image } from 'next/image';
 const Products = () => {
 
     return (
-        <div className='bg-gray-950 grid grid-cols-2 w-full h-full overflow-y-scroll overflow-x-hidden'>
-            <div className='absolute w-[calc(20%)] h-full'>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-            </div>
-            <div className="w-[80%] h-96">
-                <div className="w-full h-full flex items-center justify-center flex-row">
-                    <div className="p-4 w-1/2 h-48 bg-black">
-                        <img src={`static/cart.svg`} alt="Hello"  width={100} height={100} />
-                    </div>
-                    
-                    <div className="p-4 w-1/2 h-48 bg-black">Sed.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Voluptas.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Lorem.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Sed.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Voluptas.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Lorem.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Sed.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Voluptas.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Lorem.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Sed.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Voluptas.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Lorem.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Sed.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Voluptas.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Lorem.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Sed.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Voluptas.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Lorem.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Sed.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Voluptas.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Lorem.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Sed.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Voluptas.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Lorem.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Sed.</div>
-                    <div className="p-4 w-1/2 h-48 bg-black">Voluptas.</div>
+        <>
+            <h1>Wszystkie produkty</h1>
+            <br />
+            <div className='w-full flex-row'>
+                <br />
+                <div className='w-full h-full flex justify-between gap-8 align-middle items-center text-center flex-row'>
+                    {
+                        // (SSR_Data && SSR_Data.length > 0 ? SSR_Data.map((item) => (
+                        //     <Link key={item.id} href={`/products/${item.id}`} className='w-64 h-64'>
+                        //         <div className='aspect-square border-2 border-black bg-black flex justify-center gap-0.5 items-center h-full w-full overflow-hidden flex-row'>
+                        //             <div>
+                        //                 <div className='text-center h-full w-full'>
+                        //                     {item.title}
+                        //                 </div>
+                        //             </div>
+                        //             <div>
+                        //                 <div className='overflow-hidden h-full w-full'>
+                        //                     <img
+                        //                         src={item.thumbnail}
+                        //                         alt={item.title + `image`}
+                        //                         width={1024}
+                        //                         height={1024}
+                        //                         className='h-full w-full'
+                        //                     />
+                        //                 </div>
+                        //             </div>
+                        //             <div>
+                        //                 <div className='text-center h-full w-full'>
+                        //                     {item.price + `zł`}
+                        //                 </div>
+                        //             </div>
+                        //         </div>
+                        //     </Link>
+                        // )) : null)
+
+                        (SSR_Data && SSR_Data.length > 0 ? SSR_Data.map((item) => (
+                            <Link key={item.id} href={`/products/${item.id}`} className='w-full h-96'>
+                                <div className='border-2 border-black bg-black flex justify-center gap-0.5 items-center h-full w-full overflow-hidden flex-row'>
+                                    <div>
+                                        <div className='text-center h-full w-full'>
+                                            {item.title}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className='overflow-hidden h-full w-full'>
+                                            <img
+                                                src={item.thumbnail}
+                                                alt={item.title + `image`}
+                                                width={1024}
+                                                height={1024}
+                                                className='h-full w-full'
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className='text-center h-full w-full'>
+                                            {item.price + `zł`}
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        )) : null)
+                    }
                 </div>
+
+                {/* <ul className='list-disc w-1/2 px-4 py-2'>
+                    {
+                        DataLoading ? (<p>Loading...</p>) : (
+                            CSR_Data && CSR_Data.length > 0 ? CSR_Data.map((item) => (
+                                <Link key={item.id} href={`/products/${item.id}`}>
+                                        <li>{item.title} - ${item.price}</li>
+                                    <br />
+                                </Link>
+                            )) : null)
+                    }
+                </ul> */}
             </div>
-        </div>
+        </>
     );
 }
 
-export default Products;
+export async function getServerSideProps() {
+    const FetchApiSS = await fetch(ApiPath);
+    const SSApiData = await FetchApiSS.json();
+    return {
+        props: {
+            getServerSideData: SSApiData
+        }
+    };
+}
