@@ -5,9 +5,9 @@ import Footer from "../src/components/Footer";
 
 function MyApp({Component, pageProps}) {
     return (
-        <div className="w-screen min-h-screen h-auto">
+        <div className="w-screen min-h-screen h-auto bg-gradient-to-b from-gray-950 to-blue-950">
             <HeaderElement />            
-            <main className="p-16 bg-gradient-to-b from-gray-900 to-blue-950 mt-24 w-[80%] h-full min-h-[80svh]">
+            <main className="bg-gray-900 p-16 mt-24 w-[88%] h-full min-h-[80svh]">
                 <Component {...pageProps} />
             </main>
             <Footer/>

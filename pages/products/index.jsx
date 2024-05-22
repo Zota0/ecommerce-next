@@ -2,6 +2,8 @@
 const ApiPath = 'https://dummyjson.com/products';
 import React, { useEffect, useState, cache } from 'react';
 import Link from 'next/link';
+import GridProduct from '../../src/components/product_grid';
+import ListProduct from '../../src/components/product_list';
 
 export default function ServerSide(props) {
 
@@ -29,11 +31,11 @@ export default function ServerSide(props) {
                     <div className='w-1/12 h-full'>
                         <div className='w-full h-full flex justify-center items-center text-white gap-0'>
                             <button className='w-1/2 h-full' onClick={() => setProductViewType('grid')}>
-                                {(ProductViewType == 'grid') ? (<span className='text-lime-500'>Grid</span>) : (<span className='text-red-500'>Grid</span>)
+                                {(ProductViewType == 'grid') ? (<span className='text-lime-500'>Siatka</span>) : (<span className='text-red-500'>Siatka</span>)
                                 }
                             </button>
                             <button className='w-1/2 h-full' onClick={() => setProductViewType('list')}>
-                                {(ProductViewType == 'list') ? (<span className='text-lime-500'>List</span>) : (<span className='text-red-500'>List</span>)
+                                {(ProductViewType == 'list') ? (<span className='text-lime-500'>Lista</span>) : (<span className='text-red-500'>Lista</span>)
                                 }
                             </button>
                         </div>
@@ -43,63 +45,20 @@ export default function ServerSide(props) {
             <br />
             <div className='w-full flex-row'>
                 <br />
-                <div className='w-full h-full flex justify-center gap-8 align-middle items-center text-center flex-row'>
+                <div className='w-full h-full flex justify-center gap-2 align-middle items-center text-center flex-row'>
                     {
-                        ((ProductViewType=='grid') ? ((SSR_Data && SSR_Data.length > 0 ? SSR_Data.map((item) => (
-                            <Link key={item.id} href={`/products/${item.id}`} className='w-64 h-64'>
-                                <div className='aspect-square border-2 border-black bg-black flex justify-center gap-0.5 items-center h-full w-full overflow-hidden flex-row'>
-                                    <div>
-                                        <div className='text-center h-full w-full'>
-                                            {item.title}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className='overflow-hidden h-full w-full'>
-                                            <img
-                                                src={item.thumbnail}
-                                                alt={item.title + `image`}
-                                                width={1024}
-                                                height={1024}
-                                                className='h-full w-full'
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className='text-center h-full w-full'>
-                                            {item.price + `zł`}
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        )) : null)
-                        ) : ((SSR_Data && SSR_Data.length > 0 ? SSR_Data.map((item) => (
-                            <Link key={item.id} href={`/products/${item.id}`} className='w-[calc(80%)] h-64'>
-                                <div className='aspect-square border-2 border-black bg-black flex justify-center gap-0.5 items-center h-full w-full overflow-hidden flex-row'>
-                                    <div>
-                                        <div className='text-center h-full w-full'>
-                                            {item.title}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className='overflow-hidden h-full w-full'>
-                                            <img
-                                                src={item.thumbnail}
-                                                alt={item.title + `image`}
-                                                width={1024}
-                                                height={1024}
-                                                className='h-full w-full'
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className='text-center h-full w-full'>
-                                            {item.price + `zł`}
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
-                        )) : null)
-                        ))
+                        ((ProductViewType=='grid') ? (
+                            SSR_Data && SSR_Data.length > 0 ? SSR_Data.map((item) => (
+                                <GridProduct key={item.id} item={item} />
+                            )):null
+                        ):null)
+                    }
+                    {
+                        ((ProductViewType=='list')) ? (
+                            SSR_Data && SSR_Data.length > 0 ? SSR_Data.map((item) => (
+                                <ListProduct key={item.id} item={item} />
+                            )):null
+                        ):null
                     }
                 </div>
 
