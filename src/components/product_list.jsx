@@ -35,7 +35,7 @@ const ListProduct = ({item}) => {
                                 <tr>
                                     <td className='font-bold'>Marka</td>
                                     <td className='decoration-white  decoration-dashed'>
-                                        <Link href={`brands/${(item.brand).replace(' ','-')}`} className='border-b-2 border-b-white border-spacing-2 border-dashed'>
+                                        <Link href={`brands/${(item.brand)}`} className='border-b-2 border-b-white border-spacing-2 border-dashed'>
                                             {item.brand}
                                         </Link>
                                     </td>
