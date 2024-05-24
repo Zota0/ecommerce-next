@@ -1,5 +1,5 @@
 
-const ApiPath = 'https://dummyjson.com/products';
+const ApiPath = 'https://dummyjson.com/products/search?q=phone';
 import React, { useEffect, useState, cache } from 'react';
 import Link from 'next/link';
 import GridProduct from '../../src/components/product_grid';

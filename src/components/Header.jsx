@@ -17,7 +17,7 @@ const HeaderElement = () => {
 				<div className="w-7/12 h-full">
 					<div className="md:w-[70%] sm:w-full h-full">
 						<div className="px-36 sm:w-full h-full sm:px-24 overflow-hidden">
-							<ul className="font-bold w-full h-full flex flex-row justify-between gap-x-[5px] align-middle items-center text-center sm:gap-x-0 text-[22px]">
+							<ul className="font-bold w-full h-full flex flex-row justify-between gap-x-[5px] align-middle items-center text-center sm:gap-x-0 text-[16px]">
 								<li className="h-full w-2/6 flex">
 									<Link className="h-full w-full" href="/">
 										<span className="relative top-[35%] block h-full w-full uppercase text-nowrap">Strona główna</span>
