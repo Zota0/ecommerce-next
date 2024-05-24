@@ -13,12 +13,10 @@ const ListProduct = ({item}) => {
                 <div className='w-full h-full grid grid-cols-9 grid-rows-1 gap-0'>
                     <div className='bg-black col-span-3 w-full h-full'>
                         <Link href={ProductLink} className='w-full h-full'>
-                            <Image
+                            <img
                                 src={ProductThumbnail}
                                 alt={`Product image `+(item.id)+` - `+(item.title)}
-                                width={2048}
-                                height={2048}
-                                className='w-full h-full object-cover'
+                                className='w-full h-full object-contain'
                             />
                         </Link>
                     </div>
