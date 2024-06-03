@@ -15,7 +15,7 @@ const ListProduct = ({item}) => {
         price: item.price ?? "Nie dostępne",
         ava: item.available ?? false,
         thumb: item.thumbnail ?? notFound,
-        brand_link: item.title ? item.title.replace(data.brand,"") : "/products/error"
+        brand_link: item.title ? item.title.replace(item.brand,"") : "/products/error"
     }
 
     const ProductLink = '/products/' + data.id ?? '/products/error';
