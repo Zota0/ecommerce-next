@@ -12,7 +12,7 @@ export default function ServerSide(props) {
     console.log(getServerSideData);
     const SSR_Data = getServerSideData.products;
 
-    const c_SSR_Data = React.cache(SSR_Data);
+    const c_SSR_Data = SSR_Data;
 
     return (
         <>
