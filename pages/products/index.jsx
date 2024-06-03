@@ -12,6 +12,8 @@ export default function ServerSide(props) {
     console.log(getServerSideData);
     const SSR_Data = getServerSideData.products;
 
+    const c_SSR_Data = React.cache(SSR_Data);
+
     return (
         <>
             <h1>Wszystkie produkty</h1>
@@ -49,16 +51,9 @@ export default function ServerSide(props) {
                     {
                         ((ProductViewType=='grid') ? (
                             SSR_Data && SSR_Data.length > 0 ? SSR_Data.map((item) => (
-                                <GridProduct key={item.id} item={item} />
+                                ProductViewType === 'grid' ? <GridProduct key={item.id} item={item} />  : <ListProduct key={item.id} item={item} />
                             )):null
                         ):null)
-                    }
-                    {
-                        ((ProductViewType=='list')) ? (
-                            SSR_Data && SSR_Data.length > 0 ? SSR_Data.map((item) => (
-                                <ListProduct key={item.id} item={item} />
-                            )):null
-                        ):null
                     }
                 </div>
 
