@@ -85,7 +85,7 @@ export default function Product(props) {
             <div className="flex flex-row w-full">
                 <div className="h-full w-5/12 bg-white overflow-hidden aspect-w-16 aspect-h-9">
                     <div className="flex justify-between align-middle text-center flex-warp flex-col aspect-video mx-auto"> 
-                        <ImageCarousel images={data.images} Click={(e) => ImageZoom(e.target.id)} Style={ImageCarouselStyles} /> 
+                        <ImageCarousel images={data.images} Click={(e) => console.log(e)} Style={ImageCarouselStyles} /> 
                         <dialog open={ZoomedImage} className="z-100 top-[10%] absolute bg-black aspect-square h-[calc(85%)] w-[calc(85%)]">
                             <div className="w-full h-full flex justify-center items-center flex-row text-center">
                                 <h5>{data.title}</h5>    
