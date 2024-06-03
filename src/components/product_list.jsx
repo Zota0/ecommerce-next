@@ -8,11 +8,13 @@ const ListProduct = ({item}) => {
         id: item.id ?? "error",
         title: item.title ?? 'Tytuł',
         imgs: item.images ?? [notFound],
+        brand: item.brand ?? 'Brak firmy',
+        model: item.model ?? "Brak nazwy modelu",
         long_desc: item.long_description ?? "<h1><b>Przykładowy</b><br><h2>długi opis</h2></h1>",
         short_desc: item.short_description ?? item.description,
         price: item.price ?? "Nie dostępne",
         ava: item.available ?? false,
-        thumb: item.thumbnail ?? notFound
+        thumb: item.thumbnail ?? notFound,
     }
 
     const ProductLink = '/products/' + data.id ?? '/products/error';
