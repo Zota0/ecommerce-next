@@ -12,7 +12,7 @@ export default function ServerSide(props) {
     console.log(getServerSideData);
     const SSR_Data = getServerSideData.products;
 
-    const c_SSR_Data = SSR_Data;
+    const AllProducts = [...SSR_Data];
 
     return (
         <>
@@ -49,11 +49,24 @@ export default function ServerSide(props) {
                 <br />
                 <div className='w-full h-full flex justify-center gap-2 align-middle items-center text-center flex-row'>
                     {
-                        ((ProductViewType=='grid') ? (
-                            SSR_Data && SSR_Data.length > 0 ? SSR_Data.map((item) => (
-                                ProductViewType === 'grid' ? <GridProduct key={item.id} item={item} />  : <ListProduct key={item.id} item={item} />
-                            )):null
-                        ):null)
+                        ProductViewType === 'list' ? (
+                            (AllProducts && AllProducts.length > 0) ? (
+                                AllProducts.map((item) => (
+                                <ListProduct key={item.id} item={item}/>
+                            ))):(
+                                    true ? <div> ERROR: Fetching products</div> : null
+                            )
+                        ):null
+                    }
+                    {
+                        ProductViewType === 'grid' ? (
+                            (AllProducts && AllProducts.length > 0) ? (
+                                AllProducts.map((item) => (
+                                <GridProduct key={item.id} item={item}/>
+                            ))):(
+                                    true ? <div> ERROR: Fetching products</div> : null
+                            )
+                        ):null
                     }
                 </div>
 
